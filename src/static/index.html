@@ -10,9 +10,26 @@
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
+      <div id="user-status" class="user-status">Not signed in</div>
     </header>
 
     <main>
+      <section id="auth-container">
+        <h3>Sign In</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" required placeholder="you@mergington.edu" />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" required />
+          </div>
+          <button type="submit">Sign In</button>
+        </form>
+        <button id="logout-button" class="secondary hidden" type="button">Sign Out</button>
+      </section>
+
       <section id="activities-container">
         <h3>Available Activities</h3>
         <div id="activities-list">
@@ -26,7 +43,7 @@
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+            <input type="email" id="email" required readonly placeholder="Sign in first" />
           </div>
           <div class="form-group">
             <label for="activity">Select Activity:</label>
@@ -38,6 +55,29 @@
           <button type="submit">Sign Up</button>
         </form>
         <div id="message" class="hidden"></div>
+      </section>
+
+      <section id="admin-container" class="hidden">
+        <h3>Teacher Tools</h3>
+        <form id="activity-form">
+          <div class="form-group">
+            <label for="activity-name">Activity Name:</label>
+            <input type="text" id="activity-name" required />
+          </div>
+          <div class="form-group">
+            <label for="activity-description">Description:</label>
+            <input type="text" id="activity-description" required />
+          </div>
+          <div class="form-group">
+            <label for="activity-schedule">Schedule:</label>
+            <input type="text" id="activity-schedule" required />
+          </div>
+          <div class="form-group">
+            <label for="activity-capacity">Capacity:</label>
+            <input type="number" id="activity-capacity" min="1" required />
+          </div>
+          <button type="submit">Create Activity</button>
+        </form>
       </section>
     </main>
 
